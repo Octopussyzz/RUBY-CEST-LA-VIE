@@ -14,7 +14,7 @@ def accueil
         game_rules
     elsif input == "2"
         play
-    else input == "3"
+    elsif input == "3"
         stats
     end
 end
@@ -27,7 +27,7 @@ def game_rules
     puts "Si tu fais 5 ou 6, tu avances d'une marche"
     puts "Si tu fais 1, tu descends d'une marche."
     puts "Si tu fais 2, 3, ou 4, rien ne se passe."
-    puts "Si tu veux tout arrêter et passer directement à la partie statistiques, tape *stop* à n'importe quel moment de ta partie !"
+    puts "Si tu veux tout arrêter tape *stop* à n'importe quel moment de ta partie !"
     puts ""
     puts "As-tu compris? (y/n)"
     print ">"
@@ -348,6 +348,20 @@ def play_stats
 
 def stats
 
+	puts "Nous allons maintenant passer à la partie statistiques dans :"
+	puts "5"
+	sleep(1)
+	puts "4"
+	sleep(1)
+	puts "3"
+	sleep(1)
+	puts "2"
+	sleep(1)
+	puts "1"
+	sleep(1)
+	puts "CAWABUNGA !"
+	sleep(1)
+
 	laps = []
 
 
@@ -368,20 +382,5 @@ def stats
 	puts "La partie la plus longue s'est effectuée en #{laps.max} tours OMG !"
 end
 
+
 accueil
-play
-puts "Nous allons maintenant passer à la partie statistiques dans :"
-puts "5"
-sleep(1)
-puts "4"
-sleep(1)
-puts "3"
-sleep(1)
-puts "2"
-sleep(1)
-puts "1"
-sleep(1)
-puts "CAWABUNGA !"
-sleep(1)
-stats
-puts ""
