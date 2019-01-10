@@ -250,136 +250,136 @@ end
 
 def play
 
-	try = 0
-	stage = 0
+  try = 0
+  stage = 0
 
-	pyramid_0
+  pyramid_0
 
-	input = gets.chomp
+  input = gets.chomp
 
 
 
-	puts `clear`
+  puts `clear`
 
-		while stage < 10
+    while stage < 10
 
-			if input == "stop"
-				break
-			end
+      if input == "stop"
+        break
+      end
 
-			try += 1
-			dice = rand 6
+      try += 1
+      dice = rand 6
 
-				if dice >= 5
-					stage += 1
+        if dice >= 5
+          stage += 1
 
-					if stage == 10
-						pyramid_10
-						game_over
-						puts "YOU WIN !"
-						break
+          if stage == 10
+            pyramid_10
+            game_over
+            puts "YOU WIN !"
+            break
 
-					else
-						send("pyramid_#{stage}")
-						puts "Bien joué, tu as réussis a grimper, tu es actuellement à l'étage n°#{stage}."
-					end
+          else
+            send("pyramid_#{stage}")
+            puts "Bien joué, tu as réussis a grimper, tu es actuellement à l'étage n°#{stage}."
+          end
 
-				elsif dice == 1
+        elsif dice == 1
 
-					if stage > 0
-						stage -= 1
-						send("pyramid_#{stage}")
-      					puts "Oh non ! Tu as trébuché et es tombé d'un étage, tu es actuellement à l'étage n°#{stage}."
+          if stage > 0
+            stage -= 1
+            send("pyramid_#{stage}")
+                puts "Oh non ! Tu as trébuché et es tombé d'un étage, tu es actuellement à l'étage n°#{stage}."
 
-      				else
-      					send("pyramid_#{stage}")
-      					puts "Tu as trébuché alors que tu n'as même pas encore commencé à escalader -.-"
-      				end
+              else
+                send("pyramid_#{stage}")
+                puts "Tu as trébuché alors que tu n'as même pas encore commencé à escalader -.-"
+              end
 
-      			else
-      				send("pyramid_#{stage}")
-    				puts "Rien ne s'est passé, tu es toujours à l'étage n°#{stage}."
-    			end
+            else
+              send("pyramid_#{stage}")
+            puts "Rien ne s'est passé, tu es toujours à l'étage n°#{stage}."
+          end
 
-    			input = gets.chomp
-    			puts `clear`
-    		end
+          input = gets.chomp
+          puts `clear`
+        end
 
-    		return try
-    	end
+        return try
+      end
 
 def play_stats
 
-	try = 0
-	stage = 0
+  try = 0
+  stage = 0
 
-		while stage < 10
+    while stage < 10
 
-			try += 1
-			dice = rand 6
+      try += 1
+      dice = rand 6
 
-				if dice >= 5
-					stage += 1
+        if dice >= 5
+          stage += 1
 
-					if stage == 10
+          if stage == 10
 
-					else
-						puts "Bien joué, tu as réussis a grimper, tu es actuellement à l'étage n°#{stage}."
-					end
+          else
+            puts "Bien joué, tu as réussis a grimper, tu es actuellement à l'étage n°#{stage}."
+          end
 
-				elsif dice == 1
+        elsif dice == 1
 
-					if stage > 0
-						stage -= 1
-      					puts "Oh non ! Tu as trébuché et es tombé d'un étage, tu es actuellement à l'étage n°#{stage}."
+          if stage > 0
+            stage -= 1
+                puts "Oh non ! Tu as trébuché et es tombé d'un étage, tu es actuellement à l'étage n°#{stage}."
 
-      				else
-      					puts "Tu as trébuché alors que tu n'as même pas encore commencé à escalader -.-"
-      				end
+              else
+                puts "Tu as trébuché alors que tu n'as même pas encore commencé à escalader -.-"
+              end
 
-      			else
-    				puts "Rien ne s'est passé, tu es toujours à l'étage n°#{stage}."
-    			end
+            else
+            puts "Rien ne s'est passé, tu es toujours à l'étage n°#{stage}."
+          end
 
-    		end
+        end
 
-    		return try
-    	end
+        return try
+      end
 
 def stats
 
-	puts "Nous allons maintenant passer à la partie statistiques dans :"
-	puts "5"
-	sleep(1)
-	puts "4"
-	sleep(1)
-	puts "3"
-	sleep(1)
-	puts "2"
-	sleep(1)
-	puts "1"
-	sleep(1)
-	puts "CAWABUNGA !"
-	sleep(1)
+  puts "Nous allons maintenant passer à la partie statistiques dans :"
+  puts "5"
+  sleep(1)
+  puts "4"
+  sleep(1)
+  puts "3"
+  sleep(1)
+  puts "2"
+  sleep(1)
+  puts "1"
+  sleep(1)
+  puts "CAWABUNGA !"
+  sleep(1)
 
-	laps = []
+  laps = []
 
 
-	100.times do laps << play_stats
-	end
+  100.times do laps << play_stats
+  end
 
-	avg = laps.sum / 100
+  avg = laps.sum / 100
 
-	sleep(1)
-	puts `clear`
-	sleep(1)
-	puts "Tu viens de voir se dérouler sous tes yeux ébahis un total de 100 parties, en voilà les statistiques :"
-	sleep(1)
-	puts "Pour gagner la partie il faut en moyenne #{avg} tours !"
-	sleep(1)
-	puts "La partie la plus rapide s'est effectuée en #{laps.min} tours WOAW !"
-	sleep(1)
-	puts "La partie la plus longue s'est effectuée en #{laps.max} tours OMG !"
+  sleep(1)
+  puts `clear`
+  sleep(1)
+  puts "Tu viens de voir se dérouler sous tes yeux ébahis un total de 100 parties, en voilà les statistiques :"
+  sleep(1)
+  puts "Pour gagner la partie il faut en moyenne #{avg} tours !"
+  sleep(1)
+  puts "La partie la plus rapide s'est effectuée en #{laps.min} tours WOAW !"
+  sleep(1)
+  puts "La partie la plus longue s'est effectuée en #{laps.max} tours OMG !"
 end
 
 
