@@ -1,6 +1,7 @@
 ## MOI-JEUDI-RUBY-OUI-OUI-OUI
 
 ( On t'aime Julien Lepers et toi aussi très chèr(e) correcteur/correctrice )
+
 Rendu de la 4éme journée *Ruby basics (1/2)*
 
 ## Pour commencer
